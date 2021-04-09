@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+	<title>Главная страница</title>
+</head>
+<body>
+<a name="top">
+<nav class="navbar absolute-top navbar-expand-xl navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ВычМат</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#top">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Метод Эйлера
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#Euler1">Первого порядка</a></li>
+            <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Второго порядока</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Метод Рунге–Кутта
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#Runge1">Первого порядка</a></li>
+            <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Второго порядока</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод Адамса</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод погонки</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод стрельбы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод сетки</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://img3.goodfon.ru/wallpaper/nbig/f/88/fon-formuly-zakony-znaki.jpg" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.zastavki.com/pictures/640x480/2015/Creative_Wallpaper_Drawings_and_mathematical_formulas_095220_29.jpg
+      " class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/70/4b/92/704b92a1b8130665e260bc5b2bac740e.jpg	" class="d-block w-100" alt="">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<a name="Euler1">
+<div class="container my-4">
+	<div class="row">
+		<div class="col text-center">
+			<h1>Метод Эйлера для ОДУ первого порядка	</h1>
+		</div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="1" id="1">2u/x</option>
+             </select>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите начало отрезка (а)</span>
+  				<input type="number" aria-label="a" class="form-control" id="a">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите конец отрезка (b)</span>
+  				<input type="number" aria-label="b" class="form-control" id="b">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите начальное условие u0</span>
+  				<input type="number" aria-label="u0" class="form-control" id="u0">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3 text-center">
+		<div class="col">
+			 <button type="button" class="btn btn-dark" onclick="Eler1()">Вычислить</button>
+		</div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col">
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">i</th>
+      <th scope="col">x</th>
+      <th scope="col">u</th>
+      <th scope="col">f(x,u)</th>
+      <th scope="col">hf(x,u)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+
+
+
+<a name="Runge1">
+<div class="container my-4">
+	<div class="row">
+		<div class="col text-center">
+			<h1>Метод Рунге–Кутта для ОДУ первого порядка	</h1>
+		</div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="1" id="runge1_1">2u/x</option>
+             </select>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите начало отрезка (а)</span>
+  				<input type="number" aria-label="a" class="form-control" id="runge1_a">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите конец отрезка (b)</span>
+  				<input type="number" aria-label="b" class="form-control" id="runge1_b">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col-lg-3 col-md-0"></div>
+		<div class="col-lg-6 col-md-12">
+			<div class="input-group">
+  				<span class="input-group-text">Введите начальное условие u0</span>
+  				<input type="number" aria-label="u0" class="form-control" id="runge1_u0">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-0"></div>
+	</div>
+
+	<div class="row my-3 text-center">
+		<div class="col">
+			 <button type="button" class="btn btn-dark" onclick="Runge1()">Вычислить</button>
+		</div>
+	</div>
+
+	<div class="row my-3">
+		<div class="col">
+			<table class="table" id = "runge1_table">
+  <thead>
+    <tr>
+      <th scope="col">i</th>
+      <th scope="col">x</th>
+      <th scope="col">u</th>
+      <th scope="col">k1</th>
+      <th scope="col">k2</th>
+      <th scope="col">k3</th>
+      <th scope="col">k4</th>
+      <th scope="col">dy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+$(window).scroll(function(){
+if ($(this).scrollTop() > 100) {
+$('.scrollup').fadeIn();
+} else {
+$('.scrollup').fadeOut();
+}
+});
+ 
+$('.scrollup').click(function(){
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
+ 
+});
+</script>
+<a href="#" class="scrollup">Наверх</a>
+<div class="footer">
+		<div class="row">
+			<div class="col">
+				<h6>&copy; 2021 Бажанов Илья</h6>
+			</div>
+		</div>
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>
