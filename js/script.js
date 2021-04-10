@@ -34,7 +34,46 @@ function Eler1()
 
 
 function Runge1(){
+
+if (document.getElementById('runge1_metod').value=='1'){
 let f=[];
+	let x=[];
+	let y=[];
+	let k1=[];
+	let k2=[];
+	let dy=[];
+	let a = Number(document.getElementById('runge1_a').value);
+	let b = Number(document.getElementById('runge1_b').value);
+	let u0 = Number(document.getElementById('runge1_u0').value);
+	let tbl = document.getElementById('runge1_table2');
+	let h = (b-a)/10;
+
+
+	x[0]=parseFloat(a);
+	y[0]=parseFloat(u0);
+	k1[0]=h*2*y[0]/x[0];
+	k2[0]=h*2*(y[0]+k1[0])/(x[0]+h);
+	dy[0]=(k1[0]+k2[0])/2;
+	for (let i = 1; i <11; i++) {
+		x[i]=x[i-1]+h;
+		y[i]=y[i-1]+dy[i-1];
+		k1[i]=h*2*y[i]/x[i];
+		k2[i]=h*2*(y[i]+k1[i])/(x[i]+h);
+		dy[i]=(k1[i]+k2[i])/2;
+	}
+	
+	for(let i = 1; i < 12; i++){
+    for(let j = 0; j < 7; j++)
+        tbl.rows[i].cells[0].innerText = i-1;
+     	tbl.rows[i].cells[1].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
+     	tbl.rows[i].cells[2].innerText = parseFloat(parseFloat(y[i-1].toFixed(4)));
+     	tbl.rows[i].cells[3].innerText = parseFloat(parseFloat(k1[i-1].toFixed(4)));
+     	tbl.rows[i].cells[4].innerText = parseFloat(parseFloat(k2[i-1].toFixed(4)));
+     	tbl.rows[i].cells[5].innerText = parseFloat(parseFloat(dy[i-1].toFixed(4)));
+		}
+}else if (document.getElementById('runge1_metod').value=='2'){
+
+	let f=[];
 	let x=[];
 	let y=[];
 	let k1=[];
@@ -45,7 +84,7 @@ let f=[];
 	let a = Number(document.getElementById('runge1_a').value);
 	let b = Number(document.getElementById('runge1_b').value);
 	let u0 = Number(document.getElementById('runge1_u0').value);
-	let tbl = document.getElementById('runge1_table');
+	let tbl2 = document.getElementById('runge1_table4');
 	let h = (b-a)/10;
 
 
@@ -68,15 +107,15 @@ let f=[];
 	
 	for(let i = 1; i < 12; i++){
     for(let j = 0; j < 7; j++)
-        tbl.rows[i].cells[0].innerText = i-1;
-     	tbl.rows[i].cells[1].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
-     	tbl.rows[i].cells[2].innerText = parseFloat(parseFloat(y[i-1].toFixed(4)));
-     	tbl.rows[i].cells[3].innerText = parseFloat(parseFloat(k1[i-1].toFixed(4)));
-     	tbl.rows[i].cells[4].innerText = parseFloat(parseFloat(k2[i-1].toFixed(4)));
-     	tbl.rows[i].cells[5].innerText = parseFloat(parseFloat(k3[i-1].toFixed(4)));
-     	tbl.rows[i].cells[6].innerText = parseFloat(parseFloat(k4[i-1].toFixed(4)));
-     	tbl.rows[i].cells[7].innerText = parseFloat(parseFloat(dy[i-1].toFixed(4)));
-
+        tbl2.rows[i].cells[0].innerText = i-1;
+     	tbl2.rows[i].cells[1].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[2].innerText = parseFloat(parseFloat(y[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[3].innerText = parseFloat(parseFloat(k1[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[4].innerText = parseFloat(parseFloat(k2[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[5].innerText = parseFloat(parseFloat(k3[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[6].innerText = parseFloat(parseFloat(k4[i-1].toFixed(4)));
+     	tbl2.rows[i].cells[7].innerText = parseFloat(parseFloat(dy[i-1].toFixed(4)));
+		}
 	}
 }
 
