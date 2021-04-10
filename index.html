@@ -29,7 +29,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#Euler1">Первого порядка</a></li>
-            <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Второго порядка</a></li>
+            <li><a class="dropdown-item" href="#Euler2">Второго порядка</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -38,7 +38,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="#Runge1">Первого порядка</a></li>
-            <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Второго порядка</a></li>
+            <li><a class="dropdown-item" href="#Runge2">Второго порядка</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -234,15 +234,178 @@
 	</div>
 	</div>
 
+  <a name="Euler2">
+<div class="container my-4">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Метод Эйлера для ОДУ второго порядка  </h1>
+    </div>
+  </div>
 
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="1" id="1">е^x</option>
+             </select>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начало отрезка (а)</span>
+          <input type="number" aria-label="a" class="form-control" id="eler2_a">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите конец отрезка (b)</span>
+          <input type="number" aria-label="b" class="form-control" id="eler2_b">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u(x0)</span>
+          <input type="number" aria-label="u(x0)" class="form-control" id="eler2_u(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+   <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u'(x0)</span>
+          <input type="number" aria-label="u'(x0)" class="form-control" id="eler2_u2(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+
+  <div class="row my-3 text-center">
+    <div class="col">
+       <button type="button" class="btn btn-dark" onclick="Eler2()">Вычислить</button>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col">
+      <table class="table" id = "table_eler2">
+  <thead>
+    <tr>
+      <th scope="col">i</th>
+      <th scope="col">x</th>
+      <th scope="col">u</th>
+      <th scope="col">f(x,u,t)</th>
+      <th scope="col">t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
 
 <a name="Runge1">
 <div class="container my-4">
-	<div class="row">
-		<div class="col text-center">
-			<h1>Метод Рунге–Кутта для ОДУ первого порядка	</h1>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col text-center">
+      <h1>Метод Рунге–Кутта для ОДУ первого порядка </h1>
+    </div>
+  </div>
 
 <div class="row my-3">
     <div class="col-lg-3 col-md-0"></div>
@@ -255,54 +418,54 @@
     <div class="col-lg-3 col-md-0"></div>
   </div>
 
-	<div class="row my-3">
-		<div class="col-lg-3 col-md-0"></div>
-		<div class="col-lg-6 col-md-12">
-			<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                 <option value="1" id="runge1_ur">2u/x</option>
              </select>
-		</div>
-		<div class="col-lg-3 col-md-0"></div>
-	</div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
 
-	<div class="row my-3">
-		<div class="col-lg-3 col-md-0"></div>
-		<div class="col-lg-6 col-md-12">
-			<div class="input-group">
-  				<span class="input-group-text">Введите начало отрезка (а)</span>
-  				<input type="number" aria-label="a" class="form-control" id="runge1_a">
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-0"></div>
-	</div>
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начало отрезка (а)</span>
+          <input type="number" aria-label="a" class="form-control" id="runge1_a">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
 
-	<div class="row my-3">
-		<div class="col-lg-3 col-md-0"></div>
-		<div class="col-lg-6 col-md-12">
-			<div class="input-group">
-  				<span class="input-group-text">Введите конец отрезка (b)</span>
-  				<input type="number" aria-label="b" class="form-control" id="runge1_b">
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-0"></div>
-	</div>
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите конец отрезка (b)</span>
+          <input type="number" aria-label="b" class="form-control" id="runge1_b">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
 
-	<div class="row my-3">
-		<div class="col-lg-3 col-md-0"></div>
-		<div class="col-lg-6 col-md-12">
-			<div class="input-group">
-  				<span class="input-group-text">Введите начальное условие u0</span>
-  				<input type="number" aria-label="u0" class="form-control" id="runge1_u0">
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-0"></div>
-	</div>
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u0</span>
+          <input type="number" aria-label="u0" class="form-control" id="runge1_u0">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
 
-	<div class="row my-3 text-center">
-		<div class="col">
-			 <button type="button" class="btn btn-dark" onclick="Runge1()">Вычислить</button>
-		</div>
-	</div>
+  <div class="row my-3 text-center">
+    <div class="col">
+       <button type="button" class="btn btn-dark" onclick="Runge1()">Вычислить</button>
+    </div>
+  </div>
 
 <!-- Таблица для Рунге 2 порядка -->
   <div class="row my-3">
@@ -414,9 +577,9 @@
   </div>
 
 <!-- Таблица для Рунге 4 порядка -->
-	<div class="row my-3">
-		<div class="col">
-			<table class="table" id = "runge1_table4">
+  <div class="row my-3">
+    <div class="col">
+      <table class="table" id = "runge1_table4">
           <thead>
           <tr>
             <th scope="col">i</th>
@@ -541,10 +704,404 @@
             <td></td>
           </tr>
         </tbody>
+      </table>
+    </div>
+   </div>
+  </div>
+
+<a name="Runge2">
+<div class="container my-4">
+	<div class="row">
+		<div class="col text-center">
+			<h1>Метод Рунге–Кутта для ОДУ второго порядка	</h1>
+		</div>
+	</div>
+
+<div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="runge2_metod">
+                <option value="1">Метод Ругне Кутта 2 порядка</option>
+                <option value="2">Метод Ругне Кутта 4 порядка</option>
+             </select>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+	<div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="1" id="1">е^x</option>
+             </select>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начало отрезка (а)</span>
+          <input type="number" aria-label="a" class="form-control" id="runge2_a">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите конец отрезка (b)</span>
+          <input type="number" aria-label="b" class="form-control" id="runge2_b">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u(x0)</span>
+          <input type="number" aria-label="u(x0)" class="form-control" id="runge2_u(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+   <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u'(x0)</span>
+          <input type="number" aria-label="u'(x0)" class="form-control" id="runge2_u2(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3 text-center">
+    <div class="col">
+       <button type="button" class="btn btn-dark" onclick="Runge2()">Вычислить</button>
+    </div>
+  </div>
+
+<!-- Таблица для Рунге 2 порядка -->
+  <div class="row my-3">
+    <div class="col">
+       <table class="table" id = "runge2_table2">
+          <thead>
+          <tr>
+            <th scope="col">i</th>
+            <th scope="col">x</th>
+            <th scope="col">u</th>
+            <th scope="col">t</th>
+            <th scope="col">k1</th>
+            <th scope="col">l1</th>
+            <th scope="col">k2</th>
+            <th scope="col">l2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   </div>
+  </div>
+
+<!-- Таблица для Рунге 4 порядка -->
+	<div class="row my-3">
+		<div class="col">
+			<table class="table" id = "runge2_table4">
+          <thead>
+          <tr>
+            <th scope="col">i</th>
+            <th scope="col">x</th>
+            <th scope="col">u</th>
+            <th scope="col">t</th>
+            <th scope="col">k1</th>
+            <th scope="col">l1</th>
+            <th scope="col">k2</th>
+            <th scope="col">l2</th>
+            <th scope="col">k3</th>
+            <th scope="col">l3</th>
+            <th scope="col">k4</th>
+            <th scope="col">l4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
 			</table>
 		</div>
 	 </div>
 	</div>
+
 
 
 
