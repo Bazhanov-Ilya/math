@@ -33,3 +33,7 @@ background: url('image/icon_top.png') no-repeat;
 	right:0px;
 }
 
+.grey{
+	background-color: grey;
+}
+
