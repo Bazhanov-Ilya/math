@@ -3,7 +3,9 @@
 }
 
 body{
-		background-image:url(image/back.jpg);
+	background-image:url(image/back.jpg);
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .container{

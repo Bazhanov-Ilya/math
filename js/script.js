@@ -361,9 +361,11 @@ function Progonka(){
 		u[i]=Number(k[i]+l[i]*u[i-1]);
 
 	}
+	
 	for(let i = 1; i < 7; i++){
      	tbl.rows[i].cells[0].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
 	}
+
 	for(let i = 2; i < 6; i++){
 	tbl.rows[i].cells[1].innerText = parseFloat(parseFloat(a[i-1]).toFixed(4));
 	tbl.rows[i].cells[2].innerText = parseFloat(parseFloat(b[i-1]).toFixed(4));
@@ -372,7 +374,6 @@ function Progonka(){
 	tbl.rows[i].cells[6].innerText = parseFloat(parseFloat(k[i-1]).toFixed(4));
 	tbl.rows[i].cells[7].innerText = parseFloat(parseFloat(u[i-1]).toFixed(4));
 	}
- 	   
 }
 
 
