@@ -265,3 +265,67 @@ function Runge2(){
 	}
 }
 
+function Simplex(){
+
+	let tbl = document.getElementById('simplex_table');
+	let restrictions1 =	[Number(document.getElementById('x1_1').value), Number(document.getElementById('x2_1').value), Number(document.getElementById('x3_1').value)];
+	let restrictions2 =	[Number(document.getElementById('x1_2').value), Number(document.getElementById('x2_2').value), Number(document.getElementById('x3_2').value)];
+	let restrictions3 =	[Number(document.getElementById('x1_3').value), Number(document.getElementById('x2_3').value), Number(document.getElementById('x3_3').value)];
+	let restrictions4 =	[Number(document.getElementById('x1_4').value), Number(document.getElementById('x2_4').value), Number(document.getElementById('x3_4').value)];
+	
+	var x=[0, 0, 0];
+	var rightRestrictions = [Number(document.getElementById('y_1').value), Number(document.getElementById('y_2').value), Number(document.getElementById('y_3').value)];
+	var max = 0;
+	var max_new = 1;
+	var max1 = 0;
+	var max2 = 0;
+	var max3 = 0;
+	var i_m = restrictions_max(restrictions1[0],restrictions2[0],restrictions3[0],rightRestrictions[0],rightRestrictions[1],rightRestrictions[2]);
+	var j_m = restrictions_max(restrictions1[1],restrictions2[1],restrictions3[1],rightRestrictions[0],rightRestrictions[1],rightRestrictions[2]);
+	var k_m = restrictions_max(restrictions1[2],restrictions2[2],restrictions3[2],rightRestrictions[0],rightRestrictions[1],rightRestrictions[2]);
+
+ 	for (i = 0; i<i_m; i++){
+ 		for (var j = 0 ; j<j_m ; j++){
+ 			for (var k = 0; k<k_m; k++){
+ 				max1 = i*Number(restrictions1[0]) + j*Number(restrictions1[1]) + k*Number(restrictions1[2]);
+ 				max2 = i*Number(restrictions2[0]) + j*Number(restrictions2[1]) + k*Number(restrictions2[2]);
+ 				max3 = i*Number(restrictions3[0]) + j*Number(restrictions3[1]) + k*Number(restrictions3[2]);
+ 				max_new = i*Number(restrictions4[0]) + j*Number(restrictions4[1]) + k*Number(restrictions4[2])
+ 				if (((Number(max)<Number(max_new)) && (Number(max1)<=Number(rightRestrictions[0])) && (Number(max2)<=Number(rightRestrictions[1])) && (Number(max3)<=Number(rightRestrictions[2])))){
+ 					x[0]= i;
+ 					x[1]= j;
+ 					x[2]= k;
+ 					max = max_new;
+ 				}
+ 			}
+ 		}
+ 	}
+
+	tbl.rows[2].cells[1].innerText = Number(max);
+
+	for (var i = 0; i <3; i++) {
+		tbl.rows[1].cells[i].innerText	= x[i];
+	}
+}
+
+function sign(type){
+	if (type==1){
+		return ">=";
+	}else if (type==2){
+		return "=";
+	}else if (type==3) {
+		return "<=";
+	}
+}
+
+function restrictions_max(row1,row2,row3,restrictions1,restrictions2,restrictions3){
+	var max = 0;
+	max = restrictions1/row1;
+	if (max<(restrictions2/row2)){
+		max=restrictions2/row2;
+	}else if (max<(restrictions3/row3)){
+		max=restrictions3/row3;
+	}
+	return max;
+}
+

@@ -42,10 +42,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод Адамса</a>
+          <a class="nav-link" aria-current="page" href="#Simplex">Симплекс метод</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод погонки</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод прогонки</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод стрельбы</a>
@@ -89,6 +89,7 @@
 		</div>
 	</div>
 
+<div class="container my-4">
 	<div class="row my-3">
 		<div class="col-lg-3 col-md-0"></div>
 		<div class="col-lg-6 col-md-12">
@@ -233,6 +234,7 @@
 		</div>
 	 </div>
 	</div>
+</div>
 
   <a name="Euler2">
 <div class="container my-4">
@@ -242,6 +244,7 @@
     </div>
   </div>
 
+<div class="container my-4">
   <div class="row my-3">
     <div class="col-lg-3 col-md-0"></div>
     <div class="col-lg-6 col-md-12">
@@ -398,6 +401,7 @@
     </div>
     </div>
   </div>
+</div>
 
 <a name="Runge1">
 <div class="container my-4">
@@ -407,6 +411,7 @@
     </div>
   </div>
 
+<div class="container my-4">
 <div class="row my-3">
     <div class="col-lg-3 col-md-0"></div>
     <div class="col-lg-6 col-md-12">
@@ -716,7 +721,7 @@
 			<h1>Метод Рунге–Кутта для ОДУ второго порядка	</h1>
 		</div>
 	</div>
-
+<div class="container">
 <div class="row my-3">
     <div class="col-lg-3 col-md-0"></div>
     <div class="col-lg-6 col-md-12">
@@ -1101,6 +1106,136 @@
 		</div>
 	 </div>
 	</div>
+</div>
+
+
+
+  <a name="Simplex">
+  <div class="container my-4">
+    <div class="row">
+    <div class="col text-center">
+      <h1>Симплекс метод </h1>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="text">
+    <div class="row my-3">
+      <div class="col-lg-1 col-md-0"></div>
+        <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x1_1"></div>
+        <div class="col-lg-1 col-md-12">x1</div>
+        <div class="col-lg-1 col-md-12">+</div>
+        <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x2_1"></div>
+        <div class="col-lg-1 col-md-12">x2</div>
+        <div class="col-lg-1 col-md-12">+</div>
+        <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x3_1"></div>
+        <div class="col-lg-1 col-md-12">x3</div>
+        <div class="col-lg-1 col-md-12">
+          <select class="form-select" aria-label="Default select example" id="sign_1">
+            <option value="1">>=</option>
+            <option value="2">=</option>
+            <option value="3"><=</option>
+          </select>
+        </div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="y_1"></div>
+    <div class="col-lg-1 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-1 col-md-0"></div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x1_2"></div>
+      <div class="col-lg-1 col-md-12">x1</div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x2_2"></div>
+      <div class="col-lg-1 col-md-12">x2</div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x3_2"></div>
+      <div class="col-lg-1 col-md-12">x3</div>
+      <div class="col-lg-1 col-md-12">
+        <select class="form-select" aria-label="Default select example" id="sign_2">
+          <option value="1">>=</option>
+          <option value="2">=</option>
+          <option value="3"><=</option>
+        </select>
+      </div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="y_2"></div>
+    <div class="col-lg-1 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-1 col-md-0"></div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x1_3"></div>
+      <div class="col-lg-1 col-md-12">x1</div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x2_3"></div>
+      <div class="col-lg-1 col-md-12">x2</div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x3_3"></div>
+      <div class="col-lg-1 col-md-12">x3</div>
+      <div class="col-lg-1 col-md-12">
+        <select class="form-select" aria-label="Default select example" id="sign_3">
+          <option value="1">>=</option>
+          <option value="2">=</option>
+          <option value="3"><=</option>
+        </select>
+      </div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="y_3"></div>
+    <div class="col-lg-1 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-1 col-md-0"></div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x1_4"></div>
+      <div class="col-lg-1 col-md-12">x1 + </div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x2_4"></div>
+      <div class="col-lg-1 col-md-12">x2</div>
+      <div class="col-lg-1 col-md-12">+</div>
+      <div class="col-lg-1 col-md-12"><input type="number" class="form-control" id="x3_4"></div>
+      <div class="col-lg-1 col-md-12">x3</div>
+      <div class="col-lg-1 col-md-12">-></div>
+      <div class="col-lg-1 col-md-12">
+        <select class="form-select" aria-label="Default select example" id="minmax">
+          <option value="1">max</option>
+          <option value="2">min</option>
+        </select>
+      </div>
+    <div class="col-lg-1 col-md-0"></div>
+  </div>
+
+ </div>
+
+  <div class="row my-3 text-center">
+    <div class="col">
+       <button type="button" class="btn btn-dark" onclick="Simplex()">Вычислить</button>
+    </div>
+  </div>
+
+<!-- Таблица Cимплекс метода -->
+  <div class="row my-3">
+    <div class="col">
+       <table class="table table-bordered" id = "simplex_table">
+          <tr>
+            <th scope="col">x1</th>
+            <th scope="col">x2</th>
+            <th scope="col">x3</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td class="table-warning"></td>
+            <td class="table-warning"></td>
+            <td class="table-warning"></td>
+          </tr>
+          <tr>
+            <th scope="row">Z(x) = </th>
+            <td class="table-info" colspan="2"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   </div>
+  </div>
+</div>
 
 
 
