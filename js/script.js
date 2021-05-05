@@ -329,3 +329,50 @@ function restrictions_max(row1,row2,row3,restrictions1,restrictions2,restriction
 	return max;
 }
 
+function Progonka(){
+
+	var x=[];
+	let a=[];
+	var b=[];
+	var c=[];
+	var f=[5, 5, 5, 5, 5];
+	var l=[];
+	var k=[];
+	var u=[];
+	var p_a = Number(document.getElementById('progonka_a').value);
+	var p_c = Number(document.getElementById('progonka_c').value);
+	var u0 = Number(document.getElementById('progonka_u(x0)').value);
+	var u10 = Number(document.getElementById('progonka_u2(x0)').value);
+	var tbl = document.getElementById('table_progonka');
+	var d = (p_c-p_a)/5;
+
+	x[0]=0;
+	l[0]=0;
+	k[0]=0;
+	u[0]=p_a;
+	for (var i = 1; i < 6; i++) {
+		x[i]=Number(x[i-1]+d);
+		a[i]=Number(p_a-((x[i]-x[i-1])*u0)/p_c);
+		b[i]=Number((x[i]-x[i-1])*(x[i]-x[i-1])*u10-p_c);
+		c[i]=Number(p_a+((x[i]-x[i-1])*u0)/p_c);
+		tbl.rows[i].cells[4].innerText = parseFloat(parseFloat(f[i-1]).toFixed(4));
+		l[i]=Number(-(c[i])/(b[i]+a[i]*l[i-1]));
+		k[i]=Number((d-a[i]*k[i-1])/(b[i]+a[i]*l[i-1]));
+		u[i]=Number(k[i]+l[i]*u[i-1]);
+
+	}
+	for(let i = 1; i < 7; i++){
+     	tbl.rows[i].cells[0].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
+	}
+	for(let i = 2; i < 6; i++){
+	tbl.rows[i].cells[1].innerText = parseFloat(parseFloat(a[i-1]).toFixed(4));
+	tbl.rows[i].cells[2].innerText = parseFloat(parseFloat(b[i-1]).toFixed(4));
+	tbl.rows[i].cells[3].innerText = parseFloat(parseFloat(c[i-1]).toFixed(4));
+	tbl.rows[i].cells[5].innerText = parseFloat(parseFloat(l[i-1]).toFixed(4));
+	tbl.rows[i].cells[6].innerText = parseFloat(parseFloat(k[i-1]).toFixed(4));
+	tbl.rows[i].cells[7].innerText = parseFloat(parseFloat(u[i-1]).toFixed(4));
+	}
+ 	   
+}
+
+

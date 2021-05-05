@@ -45,7 +45,7 @@
           <a class="nav-link" aria-current="page" href="#Simplex">Симплекс метод</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод прогонки</a>
+          <a class="nav-link" aria-current="page" href="#Progonka">Метод прогонки</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Метод стрельбы</a>
@@ -1237,7 +1237,158 @@
   </div>
 </div>
 
+<a name="Progonka">
+<div class="container my-4">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Метод Прогонки для краевой задачи </h1>
+    </div>
+  </div>
 
+<div class="container my-4">
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value="1" id="1">5</option>
+             </select>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие A</span>
+          <input type="number" aria-label="a" class="form-control" id="progonka_a">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие С</span>
+          <input type="number" aria-label="b" class="form-control" id="progonka_c">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u(x0)</span>
+          <input type="number" aria-label="u(x0)" class="form-control" id="progonka_u(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+   <div class="row my-3">
+    <div class="col-lg-3 col-md-0"></div>
+    <div class="col-lg-6 col-md-12">
+      <div class="input-group">
+          <span class="input-group-text">Введите начальное условие u'(x0)</span>
+          <input type="number" aria-label="u'(x0)" class="form-control" id="progonka_u2(x0)">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-0"></div>
+  </div>
+
+
+  <div class="row my-3 text-center">
+    <div class="col">
+       <button type="button" class="btn btn-dark" onclick="Progonka()">Вычислить</button>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col">
+      <table class="table" id = "table_progonka">
+    <thead>
+    <tr>
+      <th scope="col">x</th>
+      <th scope="col">a</th>
+      <th scope="col">b</th>
+      <th scope="col">c</th>
+      <th scope="col">f(x)</th>
+      <th scope="col">l</th>
+      <th scope="col">k</th>
+      <th scope="col">u</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+</div>
 
 
 
