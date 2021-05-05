@@ -2,6 +2,15 @@
 	max-width: 100%;
 }
 
+body{
+		background-image:url(image/back.jpg);
+}
+
+.container{
+	padding-top: 10px;
+	background-color: white;
+	border-radius: 20px;
+}
 .carousel-item{
 	height: 645px;
 }
