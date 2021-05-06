@@ -346,7 +346,7 @@ function Progonka(){
 	var tbl = document.getElementById('table_progonka');
 	var d = (p_c-p_a)/5;
 
-	x[0]=0;
+	x[0]=p_a;
 	l[0]=0;
 	k[0]=0;
 	u[0]=p_a;
@@ -361,7 +361,7 @@ function Progonka(){
 		u[i]=Number(k[i]+l[i]*u[i-1]);
 
 	}
-	
+
 	for(let i = 1; i < 7; i++){
      	tbl.rows[i].cells[0].innerText = parseFloat(parseFloat(x[i-1].toFixed(4)));
 	}
