@@ -1,48 +1,46 @@
-*{
-	max-width: 100%;
+* {
+    max-width: 100%;
 }
 
-body{
-	background-image:url(image/back.jpg);
-	background-attachment: fixed;
-	background-size: cover;
+body {
+    background-image: url(image/back.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.container{
-	padding-top: 10px;
-	background-color: white;
-	border-radius: 20px;
+.container {
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 20px;
 }
 
-.img-fluid{
-	height: 100%;
+.img-fluid {
+    height: 100%;
 }
 
-
-.carousel-item img{
-	height: 645px;
+.carousel-item img {
+    height: 645px;
 }
 
-.footer{
-	background-color: #1b2024;
-	color:#e0fefd;
-	height: 30px;
-	width: 100%;
+.footer {
+    background-color: #1b2024;
+    color: #e0fefd;
+    height: 30px;
+    width: 100%;
 }
 
-.scrollup{
-width:50px;
-height:50px;
-opacity:0.3;
-position:fixed;
-bottom:30px;
-right:0px;
-display:none;
-text-indent:-9999px;
-background: url('image/icon_top.png') no-repeat;
+.scrollup {
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+    position: fixed;
+    bottom: 30px;
+    right: 0px;
+    display: none;
+    text-indent: -9999px;
+    background: url('image/icon_top.png') no-repeat;
 }
 
-.nav{
-	right:0px;
+.nav {
+    right: 0px;
 }
-
